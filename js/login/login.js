@@ -1,5 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const userIdInput = document.getElementById("user-id");
+/* 비밀번호 찾기 관련 함수 */
+function pwFind() {
+  pwFindModalOpen();
+}
+
+function pwFindModalOpen() {
+  // 모달
+  const pwFindModal = document.getElementById("pwModal");
+  pwFindModal.classList.add("active");
+
+  // userId
+  const userIdInput = document.getElementById("pwUserId");
 
   userIdInput.addEventListener("input", function () {
     const idRegex = /[^a-zA-Z0-9]/g;
@@ -10,18 +20,180 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // console.log(userIdInput.value);
   });
-});
 
-function pwFind() {
-  pwFindModalOpen();
-}
+  // phone (번호입력)
+  const phoneInput = document.getElementById("pwPhone");
 
-function pwFindModalOpen() {
-  const pwFindModal = document.getElementById("pwModal");
-  pwFindModal.classList.add("active");
+  phoneInput.addEventListener("input", function () {
+    const phoneRegex = /[^0-9]/g;
+    let onlyNumber = phoneInput.value.replace(phoneRegex, "");
+    if (onlyNumber.length < 4) {
+      phoneInput.value = onlyNumber;
+      return;
+    }
+
+    if (onlyNumber.length < 8) {
+      phoneInput.value = onlyNumber.slice(0, 3) + "-" + onlyNumber.slice(3);
+      return;
+    }
+
+    phoneInput.value = onlyNumber.slice(0, 3) + "-" + onlyNumber.slice(3, 7) + "-" + onlyNumber.slice(7, 11);
+    // console.log("onlyNumber", onlyNumber);
+  });
+
+  // authCode (인증번호)
+  const authCodeInput = document.getElementById("authCode");
+
+  authCodeInput.addEventListener("input", function () {
+    const authCodeRegex = /[^0-9]/g;
+
+    if (idRegex.test(userIdInput.value)) {
+      userIdInput.value = userIdInput.value.replace(idRegex, "");
+      alert("숫자만 사용할 수 있습니다.");
+    }
+    // console.log(userIdInput.value);
+  });
 }
 
 function pwFindModalClose() {
   const pwFindModal = document.getElementById("pwModal");
   pwFindModal.classList.remove("active");
 }
+function sendPhoneAuthCode() {
+  // input 요소 먼저 가져오기
+  const userIdInput = document.getElementById("pwUserId");
+  const userPhoneInput = document.getElementById("pwPhone");
+  const sendAuthNumBtn = document.getElementById("sendAuthNum");
+  const pwSearchBtn = document.getElementById("pwSearch");
+
+  // value 값을 따로 변수로 빼기
+  const userId = userIdInput.value;
+  const userPhone = userPhoneInput.value;
+
+  // 빈값 체크
+  if (userId === "") {
+    alert("아이디를 입력해주세요.");
+    userIdInput.focus();
+    return;
+  } else if (userPhone === "") {
+    alert("전화번호를 입력해주세요.");
+    userPhoneInput.focus();
+    return;
+  }
+
+  // 인증번호 입력창 가져오기
+  const authField = document.getElementById("authField");
+
+  // 비교용 기준값
+  const tempId = "admin";
+  const tempPhone = "010-0000-0000";
+
+  // 둘 다 일치
+  if (userId === tempId && userPhone === tempPhone) {
+    authField.style.display = "block";
+    userIdInput.disabled = true;
+    userPhoneInput.disabled = true;
+
+    sendAuthNumBtn.style.display = "none";
+    pwSearchBtn.style.display = "block";
+    return;
+  }
+
+  // 아이디만 틀림
+  if (userId !== tempId && userPhone === tempPhone) {
+    authField.style.display = "none";
+    alert("아이디가 일치하지 않습니다.");
+    userIdInput.focus();
+    return;
+  }
+
+  // 휴대폰만 틀림
+  if (userId === tempId && userPhone !== tempPhone) {
+    authField.style.display = "none";
+    alert("휴대폰번호가 일치하지 않습니다.");
+    userPhoneInput.focus();
+    return;
+  }
+
+  // 둘 다 틀림
+  if (userId !== tempId && userPhone !== tempPhone) {
+    authField.style.display = "none";
+    alert("아이디와 휴대폰번호가 모두 일치하지 않습니다.");
+    userIdInput.focus();
+    return;
+  }
+}
+
+function resetPassWord() {
+  const userPhoneAuthNumInput = document.getElementById("authCode");
+  const userPhoneAuthNum = userPhoneAuthNumInput.value;
+  const tempAuthNum = "123456";
+
+  if (userPhoneAuthNum === "") {
+    alert("인증번호를 입력해주세요.");
+    userPhoneAuthNumInput.focus();
+    return;
+  } else if (userPhoneAuthNum !== tempAuthNum) {
+    alert("인증번호가 일치하지 않습니다.");
+    userPhoneAuthNumInput.focus();
+    return;
+  } else {
+    alert("인증번호가 일치합니다. 비밀번호를 재설정해주세요.");
+  }
+}
+
+/* */
+
+/* 로그인 관련 함수 */
+
+function login() {
+  const userIdInput = document.getElementById("user-id");
+  const userPwInput = document.getElementById("user-pw");
+  const keepLoginInput = document.querySelector("input[name='keepLogin']");
+
+  // 자동 로그인 먼저 검사 (임시로 로컬스토리지에 저장)
+  const isLogin = localStorage.getItem("isLogin");
+
+  if (isLogin === "true") {
+    alert("자동 로그인 상태입니다.");
+    location.href = "./home/home.html";
+    return;
+  }
+
+  const userId = userIdInput.value;
+  const userPw = userPwInput.value;
+
+  // 빈값 검사
+  if (userId === "") {
+    alert("아이디를 입력해주세요.");
+    userIdInput.focus();
+    return;
+  }
+
+  if (userPw === "") {
+    alert("비밀번호를 입력해주세요.");
+    userPwInput.focus();
+    return;
+  }
+
+  // 임시 계정
+  const tempId = "admin";
+  const tempPw = "123456";
+
+  if (userId === tempId && userPw === tempPw) {
+    alert("로그인 성공!");
+
+    // 로그인 상태 유지 체크 시 저장
+    if (keepLoginInput.checked) {
+      localStorage.setItem("isLogin", "true");
+    } else {
+      localStorage.removeItem("isLogin");
+    }
+
+    location.href = "./home/home.html";
+  } else {
+    alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+  }
+}
+
+/*  */

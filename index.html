@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>안전보건 시스템 - 로그인</title>
+    <title>안전더하기 - 로그인</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/login/login.css" />
     <link rel="stylesheet" href="./css/login/pwFind.css" />
@@ -13,8 +13,8 @@
       <!-- 왼쪽 영역 -->
       <section class="intro" aria-labelledby="intro-title">
         <header class="intro-header">
-          <h1 id="intro-title" class="intro-logo">안전보건 시스템</h1>
-          <p class="intro-sub">Safety &amp; health System</p>
+          <h1 id="intro-title" class="intro-logo">안전더하기</h1>
+          <p class="intro-sub">ANJUNn+</p>
         </header>
 
         <div class="intro-content">
@@ -55,10 +55,6 @@
             </li>
           </ul>
         </div>
-
-        <footer class="intro-footer">
-          <small>Copyright © All rights reserved by (주)이세이프</small>
-        </footer>
       </section>
 
       <!-- 오른쪽 영역 -->
@@ -90,7 +86,7 @@
                 <button type="button" id="findPassWord" class="find-pw" onclick="pwFind()">비밀번호 찾기</button>
               </div>
 
-              <button class="login-btn" type="button">로그인</button>
+              <button class="login-btn" type="button" onclick="login()">로그인</button>
             </fieldset>
           </form>
         </div>
@@ -104,17 +100,24 @@
         <h2>비밀번호 찾기</h2>
         <p>가입 시 등록한 아이디와 휴대폰 번호를 입력해 주세요.</p>
 
-        <div class="pw-field">
-          <label class="pw-label" for="pwUserId">아이디</label>
-          <input type="text" id="pwUserId" class="pw-input" placeholder="아이디를 입력하세요" />
+        <div class="modal-field">
+          <label class="modal-label" for="pwUserId">아이디</label>
+          <input type="text" id="pwUserId" class="modal-input" placeholder="아이디를 입력하세요" />
         </div>
 
-        <div class="pw-field">
-          <label class="pw-label" for="pwPhone">휴대폰 번호</label>
-          <input type="tel" id="pwPhone" class="pw-input" placeholder="010-0000-0000" />
+        <div class="modal-field">
+          <label class="modal-label" for="pwPhone">휴대폰 번호</label>
+          <input type="tel" id="pwPhone" class="modal-input" placeholder="010-0000-0000" inputmode="numeric" />
         </div>
 
-        <button type="button" class="pw-submit">인증 번호 발송</button>
+        <div class="modal-field" id="authField">
+          <label class="modal-label" for="authCode">인증번호</label>
+          <input type="number" id="authCode" class="modal-input" placeholder="인증번호" />
+        </div>
+
+        <button type="button" id="sendAuthNum" class="pw-submit" onclick="sendPhoneAuthCode()">인증 번호 발송</button>
+
+        <button type="button" id="pwSearch" class="pw-submit" onclick="resetPassWord()">비밀번호 찾기</button>
       </div>
     </div>
 

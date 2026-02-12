@@ -63,11 +63,11 @@
   line-height: 1.4;
 }
 
-#pwModal .pw-field {
+#pwModal .modal-field {
   margin-top: 12px;
 }
 
-#pwModal .pw-label {
+#pwModal .modal-label {
   display: block;
   font-size: 12px;
   font-weight: 600;
@@ -75,7 +75,7 @@
   margin: 0 0 6px;
 }
 
-#pwModal .pw-input {
+#pwModal .modal-input {
   width: 100%;
   height: 40px;
   border: 1px solid #bbb;
@@ -86,6 +86,12 @@
   background: #fff;
 }
 
+#pwModal .modal-input:disabled {
+  background-color: #f6f6f6;
+}
+#authField {
+  display: none;
+}
 #pwModal .pw-input::placeholder {
   color: #b6b6b6;
 }
@@ -110,4 +116,8 @@
 
 #pwModal .pw-submit:active {
   transform: translateY(1px);
+}
+
+#pwSearch {
+  display: none;
 }
