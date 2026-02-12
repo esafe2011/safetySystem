@@ -204,10 +204,9 @@
   color: #555;
 }
 
-.find-link {
+.find-pw {
   font-size: 13px;
   color: #5dadec;
-  width: fit-content;
 }
 
 .login-btn {
@@ -219,10 +218,11 @@
   color: #fff;
   font-size: 15px;
   font-weight: 800;
+  transition: 0.2s ease-in-out;
 }
 
 .login-btn:hover {
-  filter: brightness(0.95);
+  background-color: #4f93c7;
 }
 
 /* 접근성(legend 숨김용) */
