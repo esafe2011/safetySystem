@@ -14,7 +14,7 @@
       <section class="intro" aria-labelledby="intro-title">
         <header class="intro-header">
           <h1 id="intro-title" class="intro-logo">안전더하기</h1>
-          <p class="intro-sub">ANJUNn+</p>
+          <p class="intro-sub">ANJUN&#43;</p>
         </header>
 
         <div class="intro-content">
@@ -93,7 +93,7 @@
       </section>
     </main>
     <!--비밀번호 찾기 모달-->
-    <div id="pwModal">
+    <div id="pwModal" class="pw-modal-container">
       <div class="pw-modal-content">
         <button type="button" class="pw-modal-close" onclick="pwFindModalClose()">×</button>
 
@@ -121,6 +121,24 @@
       </div>
     </div>
 
+    <!--비밀번호 변경  모달-->
+    <div id="pwChangeModal" class="pw-modal-container">
+      <div class="pw-modal-content">
+        <button type="button" class="pw-modal-close" onclick="pwFindModalClose()">×</button>
+
+        <h2>비밀번호 찾기</h2>
+
+        <div class="modal-field">
+          <input type="password" id="changePw" class="modal-input" placeholder="새 비밀번호" />
+        </div>
+
+        <div class="modal-field">
+          <input type="password" id="changePwCheck" class="modal-input" placeholder="비밀번호 확인" />
+        </div>
+
+        <button type="button" id="changePwBtn" class="pw-submit" onclick="Changepw()">비밀번호 변경</button>
+      </div>
+    </div>
     <script src="./js/login/login.js"></script>
   </body>
 </html>

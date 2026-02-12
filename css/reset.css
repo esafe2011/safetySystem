@@ -113,7 +113,10 @@ select {
 input::placeholder {
   font-family: "Pretendard", sans-serif;
 }
-
+button,
+a {
+  font-family: "Pretendard", Arial, sans-serif;
+}
 .clear:after {
   content: "";
   display: block;

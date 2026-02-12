@@ -1,11 +1,116 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/menu.js/menu.css" />
     <title>안전더하기 - 홈</title>
   </head>
   <body>
     <h1>홈 화면</h1>
+    <aside id="leftFixedMenu">
+      <div>
+        <div class="home-box">
+          <button type="button" id="homeBtn" class="home-button">
+            <span class="menu-title">
+              안전더하기
+              <span class="unit">ANJUN&#43;</span>
+            </span>
+            <img src="../images/icons/house.svg" alt="홈" />
+          </button>
+        </div>
+        <ul class="company-box">
+          <li class="menu-title">
+            <span>관리자</span>
+            <button type="button">로그아웃</button>
+          </li>
+          <li class="menu-sub">(주)회사이름</li>
+        </ul>
+
+        <div></div>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-title"><h2>메뉴</h2></li>
+        <li class="menu-item">
+          <div class="img-btn-box">
+            <button type="button" class="menu-button">
+              <span class="icon-text-box">
+                <img src="../images/icons/shield-user.svg" alt="안전보건계획메뉴" />
+                <span>안전보건계획</span>
+              </span>
+              <img src="../images/icons/chevron-down.svg" alt="화살표" class="menu-arrow-img" />
+            </button>
+          </div>
+        </li>
+
+        <li class="menu-item has-children">
+          <div class="img-btn-box">
+            <button type="button" class="menu-button">
+              <span class="icon-text-box">
+                <img src="../images/icons/replace.svg" alt="실행수준메뉴" />
+                <span>실행수준</span>
+              </span>
+              <img src="../images/icons/chevron-down.svg" alt="화살표" class="menu-arrow-img" />
+            </button>
+          </div>
+
+          <ul class="submenu">
+            <li class="submenu-item">
+              <a href="#none" class="submenu-button">대시보드</a>
+            </li>
+            <li class="submenu-item">
+              <a href="#none" class="submenu-button">월간현황</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item has-children">
+          <div class="img-btn-box">
+            <button type="button" class="menu-button">
+              <span class="icon-text-box">
+                <img src="../images/icons/user-cog.svg" alt="운영관리메뉴" />
+                <span>운영관리</span>
+              </span>
+              <img src="../images/icons/chevron-down.svg" alt="화살표" class="menu-arrow-img" />
+            </button>
+          </div>
+
+          <ul class="submenu">
+            <li class="submenu-item">
+              <a href="#none" class="submenu-button">위험요인</a>
+            </li>
+            <li class="submenu-item">
+              <a href="#none" class="submenu-button">조치현황</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item">
+          <div class="img-btn-box">
+            <button type="button" class="menu-button">
+              <span class="icon-text-box">
+                <img src="../images/icons/chart-column-increasing.svg" alt="위험성평가메뉴" />
+                <span>위험성평가</span>
+              </span>
+              <img src="../images/icons/chevron-down.svg" alt="화살표" class="menu-arrow-img" />
+            </button>
+          </div>
+        </li>
+
+        <li class="menu-item">
+          <div class="img-btn-box">
+            <button type="button" class="menu-button">
+              <span class="icon-text-box">
+                <img src="../images/icons/graduation-cap.svg" alt="교육메뉴" />
+                <span>교육</span>
+              </span>
+              <img src="../images/icons/chevron-down.svg" alt="화살표" class="menu-arrow-img" />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <script src="../js/menu/menu.js"></script>
   </body>
 </html>

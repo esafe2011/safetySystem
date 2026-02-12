@@ -93,9 +93,9 @@ function sendPhoneAuthCode() {
     authField.style.display = "block";
     userIdInput.disabled = true;
     userPhoneInput.disabled = true;
-
     sendAuthNumBtn.style.display = "none";
     pwSearchBtn.style.display = "block";
+    alert("인증번호가 발송되었습니다.");
     return;
   }
 
@@ -126,6 +126,8 @@ function sendPhoneAuthCode() {
 
 function resetPassWord() {
   const userPhoneAuthNumInput = document.getElementById("authCode");
+  const pwChangeModal = document.getElementById("pwChangeModal");
+  const pwFindModal = document.getElementById("pwModal");
   const userPhoneAuthNum = userPhoneAuthNumInput.value;
   const tempAuthNum = "123456";
 
@@ -139,6 +141,34 @@ function resetPassWord() {
     return;
   } else {
     alert("인증번호가 일치합니다. 비밀번호를 재설정해주세요.");
+    pwFindModal.classList.remove("active");
+    pwChangeModal.classList.add("active");
+  }
+}
+
+function Changepw() {
+  const changePwInput = document.getElementById("changePw");
+  const changePwCheckInput = document.getElementById("changePwCheck");
+  const changePw = changePwInput.value;
+  const changePwCheck = changePwCheckInput.value;
+
+  if (changePw === "") {
+    alert("새 비밀번호를 입력해주세요.");
+    changePwInput.focus();
+    return;
+  } else if (changePwCheck === "") {
+    alert("새 비밀번호 확인을 입력해주세요.");
+    changePwCheckInput.focus();
+    return;
+  } else if (changePw !== changePwCheck) {
+    alert("비밀번호가 일치하지 않습니다.");
+    changePwCheckInput.focus();
+    return;
+  } else {
+    // 비밀번호 재설정 로직 추가하면 됩니다.
+    alert("비밀번호가 재설정되었습니다.");
+
+    location.reload();
   }
 }
 
