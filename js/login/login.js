@@ -195,7 +195,7 @@ function Changepw() {
   }
 }
 
-/* 🔥 추가: 비밀번호 찾기 모달 초기화 */
+/* 비밀번호 찾기 모달 초기화 */
 function resetPwFindModal() {
   const pwUserId = document.getElementById("pwUserId");
   const pwPhone = document.getElementById("pwPhone");
@@ -220,7 +220,7 @@ function resetPwFindModal() {
   if (idNotice) idNotice.style.display = "none";
 }
 
-/* 🔥 추가: 비밀번호 변경 모달 초기화 */
+/* 비밀번호 변경 모달 초기화 */
 function resetPwChangeModal() {
   const changePw = document.getElementById("changePw");
   const changePwCheck = document.getElementById("changePwCheck");
