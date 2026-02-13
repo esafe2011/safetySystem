@@ -37,7 +37,6 @@ function pwFindModalOpen() {
     } else {
       idNotice.style.display = "none";
     }
-    // console.log(userIdInput.value);
   });
 
   // phone (번호입력)
@@ -57,7 +56,6 @@ function pwFindModalOpen() {
     }
 
     phoneInput.value = onlyNumber.slice(0, 3) + "-" + onlyNumber.slice(3, 7) + "-" + onlyNumber.slice(7, 11);
-    // console.log("onlyNumber", onlyNumber);
   });
 
   // authCode (인증번호)
@@ -66,18 +64,24 @@ function pwFindModalOpen() {
   authCodeInput.addEventListener("input", function () {
     const authCodeRegex = /[^0-9]/g;
 
-    if (idRegex.test(userIdInput.value)) {
-      userIdInput.value = userIdInput.value.replace(idRegex, "");
-      alert("숫자만 사용할 수 있습니다.");
+    if (authCodeRegex.test(authCodeInput.value)) {
+      authCodeInput.value = authCodeInput.value.replace(authCodeRegex, "");
     }
-    // console.log(userIdInput.value);
   });
 }
 
 function pwFindModalClose() {
   const pwFindModal = document.getElementById("pwModal");
   pwFindModal.classList.remove("active");
+
+  const pwChangeModal = document.getElementById("pwChangeModal");
+  pwChangeModal.classList.remove("active");
+
+  /* 입력값 및 상태 초기화 */
+  resetPwFindModal();
+  resetPwChangeModal();
 }
+
 function sendPhoneAuthCode() {
   // input 요소 먼저 가져오기
   const userIdInput = document.getElementById("pwUserId");
@@ -189,6 +193,40 @@ function Changepw() {
 
     location.reload();
   }
+}
+
+/* 🔥 추가: 비밀번호 찾기 모달 초기화 */
+function resetPwFindModal() {
+  const pwUserId = document.getElementById("pwUserId");
+  const pwPhone = document.getElementById("pwPhone");
+  const authCode = document.getElementById("authCode");
+
+  const authField = document.getElementById("authField");
+  const sendAuthNumBtn = document.getElementById("sendAuthNum");
+  const pwSearchBtn = document.getElementById("pwSearch");
+  const idNotice = document.getElementById("pwFindIdNotice");
+
+  pwUserId.value = "";
+  pwPhone.value = "";
+  authCode.value = "";
+
+  pwUserId.disabled = false;
+  pwPhone.disabled = false;
+
+  authField.style.display = "none";
+  sendAuthNumBtn.style.display = "block";
+  pwSearchBtn.style.display = "none";
+
+  if (idNotice) idNotice.style.display = "none";
+}
+
+/* 🔥 추가: 비밀번호 변경 모달 초기화 */
+function resetPwChangeModal() {
+  const changePw = document.getElementById("changePw");
+  const changePwCheck = document.getElementById("changePwCheck");
+
+  changePw.value = "";
+  changePwCheck.value = "";
 }
 
 /* */
