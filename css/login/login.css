@@ -182,7 +182,13 @@
   outline: none;
   background: #fff;
 }
-
+.id-no-ko {
+  color: #ef4444;
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 7px;
+  display: none;
+}
 .form-input:focus {
   border-color: #5dadec;
   box-shadow: 0 0 0 4px rgba(43, 95, 215, 0.12);

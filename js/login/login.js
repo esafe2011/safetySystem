@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const userIdInput = document.getElementById("user-id");
+
+  userIdInput.addEventListener("input", function () {
+    const idRegex = /[^a-zA-Z0-9]/g;
+    const idNotice = document.getElementById("loginIdNotice");
+
+    if (idRegex.test(userIdInput.value)) {
+      userIdInput.value = userIdInput.value.replace(idRegex, "");
+      idNotice.style.display = "inline-block";
+    } else {
+      idNotice.style.display = "none";
+    }
+  });
+});
+
 /* 비밀번호 찾기 관련 함수 */
 function pwFind() {
   pwFindModalOpen();
@@ -6,6 +22,7 @@ function pwFind() {
 function pwFindModalOpen() {
   // 모달
   const pwFindModal = document.getElementById("pwModal");
+  const idNotice = document.getElementById("pwFindIdNotice");
   pwFindModal.classList.add("active");
 
   // userId
@@ -16,7 +33,9 @@ function pwFindModalOpen() {
 
     if (idRegex.test(userIdInput.value)) {
       userIdInput.value = userIdInput.value.replace(idRegex, "");
-      alert("아이디는 영문 + 숫자만 사용할 수 있습니다.");
+      idNotice.style.display = "inline-block";
+    } else {
+      idNotice.style.display = "none";
     }
     // console.log(userIdInput.value);
   });
