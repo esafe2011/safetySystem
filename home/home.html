@@ -4,21 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/menu.js/menu.css" />
+    <link rel="stylesheet" href="../css/menu/menu.css" />
+    <link rel="stylesheet" href="../css/home/home.css" />
+
+    <!--  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <title>안전더하기 - 홈</title>
   </head>
   <body>
-    <h1>홈 화면</h1>
     <aside id="leftFixedMenu">
       <div>
         <div class="home-box">
-          <button type="button" id="homeBtn" class="home-button">
+          <a href="../home/home.html" id="homeBtn" class="home-button">
             <span class="menu-title">
               안전더하기
               <span class="unit">ANJUN&#43;</span>
             </span>
             <img src="../images/icons/house.svg" alt="홈" />
-          </button>
+          </a>
         </div>
         <ul class="company-box">
           <li class="menu-title">
@@ -111,6 +115,247 @@
         </li>
       </ul>
     </aside>
+
+    <!-- 메뉴 끝 -->
+
+    <div class="dash">
+      <!-- 상단 알림 영역 -->
+      <header class="topbar">
+        <ul class="alert-list">
+          <li class="badge badge-red">⚠ 실무관련 공지</li>
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
+        </ul>
+
+        <button class="btn btn-red">공장관리화면</button>
+      </header>
+
+      <!-- 공지사항 -->
+      <section class="panel notice">
+        <header class="panel-head">
+          <h2>공지사항</h2>
+          <button class="link-btn">더 보기 &gt;</button>
+        </header>
+
+        <table class="notice-table">
+          <thead>
+            <tr>
+              <th scope="col">제목</th>
+              <th scope="col">등록일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>[공지] 사업장 위생점검에 관한 지침(고용노동부 공지 제2023-19호)</td>
+              <td>2024.10.31</td>
+            </tr>
+            <tr>
+              <td>[공지] 사업장 위생점검에 관한 지침(고용노동부 공지 제2023-18호)</td>
+              <td>2024.10.31</td>
+            </tr>
+            <tr>
+              <td>[공지] 사업장 위생점검에 관한 지침(고용노동부 공지 제2023-18호)</td>
+              <td>2024.10.31</td>
+            </tr>
+            <tr>
+              <td>[공지] 사업장 위생점검에 관한 지침(고용노동부 공지 제2023-19호)</td>
+              <td>2024.10.31</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 카드 4개 -->
+      <section class="cards">
+        <div class="cards-slider">
+          <article class="card">
+            <header class="card-head">
+              <h3>무재해 현황판</h3>
+            </header>
+
+            <dl class="card-info">
+              <dt>이수자수</dt>
+              <dd class="num blue">274 명</dd>
+
+              <dt>결재자수</dt>
+              <dd class="num blue">315 명</dd>
+
+              <dt>시작일</dt>
+              <dd class="pill pill-blue">2025년 04월 01일</dd>
+
+              <dt>종료일</dt>
+              <dd class="pill pill-green">2025년 12월 31일</dd>
+            </dl>
+          </article>
+
+          <!-- 카드 반복 -->
+          <article class="card">
+            <header class="card-head">
+              <h3>2026년 교육</h3>
+            </header>
+            <dl class="card-info">
+              <dt>이수자수</dt>
+              <dd class="num blue">274 명</dd>
+              <dt>결재자수</dt>
+              <dd class="num blue">315 명</dd>
+              <dt>시작일</dt>
+              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dt>종료일</dt>
+              <dd class="pill pill-green">2025년 12월 31일</dd>
+            </dl>
+          </article>
+
+          <article class="card">
+            <header class="card-head">
+              <h3>무재해 현황판</h3>
+            </header>
+
+            <dl class="card-info">
+              <dt>이수자수</dt>
+              <dd class="num blue">274 명</dd>
+
+              <dt>결재자수</dt>
+              <dd class="num blue">315 명</dd>
+
+              <dt>시작일</dt>
+              <dd class="pill pill-blue">2025년 04월 01일</dd>
+
+              <dt>종료일</dt>
+              <dd class="pill pill-green">2025년 12월 31일</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <header class="card-head">
+              <h3>무재해 현황판</h3>
+            </header>
+
+            <dl class="card-info">
+              <dt>이수자수</dt>
+              <dd class="num blue">274 명</dd>
+
+              <dt>결재자수</dt>
+              <dd class="num blue">315 명</dd>
+
+              <dt>시작일</dt>
+              <dd class="pill pill-blue">2025년 04월 01일</dd>
+
+              <dt>종료일</dt>
+              <dd class="pill pill-green">2025년 12월 31일</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <header class="card-head">
+              <h3>무재해 현황판</h3>
+            </header>
+
+            <dl class="card-info">
+              <dt>이수자수</dt>
+              <dd class="num blue">274 명</dd>
+
+              <dt>결재자수</dt>
+              <dd class="num blue">315 명</dd>
+
+              <dt>시작일</dt>
+              <dd class="pill pill-blue">2025년 04월 01일</dd>
+
+              <dt>종료일</dt>
+              <dd class="pill pill-green">2025년 12월 31일</dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <!-- 하단 영역 -->
+      <section class="bottom">
+        <!-- 캘린더 -->
+        <section class="panel calendar">
+          <header class="calendar-head">
+            <h3>
+              안전보건 교육일정
+              <span>2025 12</span>
+            </h3>
+            <nav class="calendar-nav">
+              <button>&lt;</button>
+              <button>&gt;</button>
+            </nav>
+          </header>
+
+          <!-- 요일 -->
+          <ol class="week">
+            <li>일</li>
+            <li>월</li>
+            <li>화</li>
+            <li>수</li>
+            <li>목</li>
+            <li>금</li>
+            <li>토</li>
+          </ol>
+
+          <!-- 날짜 -->
+          <ol class="days">
+            <li class="day">
+              <time datetime="2025-12-01">1</time>
+            </li>
+
+            <li class="day has-event">
+              <time datetime="2025-12-02">2</time>
+              <ul class="event-list">
+                <li class="event red">PSM 준비심사</li>
+              </ul>
+            </li>
+
+            <li class="day has-event">
+              <time datetime="2025-12-03">3</time>
+              <ul class="event-list">
+                <li class="event orange">근로자 정기교육</li>
+              </ul>
+            </li>
+
+            <li class="day has-event">
+              <time datetime="2025-12-04">4</time>
+              <ul class="event-list">
+                <li class="event purple">안전 점검</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 세부일정 -->
+        <aside class="panel schedule">
+          <h3>세부일정</h3>
+          <ul class="schedule-list">
+            <li>
+              <time datetime="2025-12-02">2025.12.02</time>
+              <p>PSM 준비심사</p>
+            </li>
+            <li>
+              <time datetime="2025-12-06">2025.12.06</time>
+              <p>안전보건회의</p>
+            </li>
+            <li>
+              <time datetime="2025-12-10">2025.12.10</time>
+              <p>소방훈련</p>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </div>
+
     <script src="../js/menu/menu.js"></script>
+
+    <!-- 최신 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- IE에서 문제 생기면 1.12.4로 fallback -->
+    <script>
+      if (!window.jQuery) {
+        document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js"><\/script>');
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="../js/home/home.js"></script>
   </body>
 </html>
