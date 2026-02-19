@@ -6,10 +6,29 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/menu/menu.css" />
     <link rel="stylesheet" href="../css/home/home.css" />
+    <link rel="stylesheet" href="../css/home/schedulePlan.css" />
 
-    <!--  -->
+    <!-- 슬릭 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <script src="../js/home/customSlick.js" defer></script>
+    <script src="../js/home/calendar.js" defer></script>
+
+    <script src="../js/menu/menu.js" defer></script>
+    <script src="../js/home/schedulePlan.js" defer></script>
+
+    <!-- 최신 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+
+    <!-- IE에서 문제 생기면 1.12.4로 fallback -->
+    <script defer>
+      if (!window.jQuery) {
+        document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js"><\/script>');
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
     <title>안전더하기 - 홈</title>
   </head>
   <body>
@@ -121,14 +140,20 @@
     <div class="dash">
       <!-- 상단 알림 영역 -->
       <header class="topbar">
-        <ul class="alert-list">
-          <li class="badge badge-red">⚠ 실무관련 공지</li>
-          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
-          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
-          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다</li>
+        <img class="logo" src="../images/logo.png" alt="회사로고" />
+        <ul class="alert-list live-alert-notice">
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다1</li>
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다2</li>
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다3</li>
+
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다4</li>
+
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다5</li>
+
+          <li class="badge badge-dark">[9/23, 금] 안전수칙에 따른 화재는 책임이 큽니다6</li>
         </ul>
 
-        <button class="btn btn-red">공장관리화면</button>
+        <button class="btn btn-red">긴급상황전파</button>
       </header>
 
       <!-- 공지사항 -->
@@ -174,18 +199,42 @@
               <h3>무재해 현황판</h3>
             </header>
 
-            <dl class="card-info">
-              <dt>이수자수</dt>
-              <dd class="num blue">274 명</dd>
-
-              <dt>결재자수</dt>
-              <dd class="num blue">315 명</dd>
-
+            <dl class="card-info first">
+              <dt>목표일수</dt>
+              <dd>
+                <strong class="num blue">274</strong>
+                명
+              </dd>
+            </dl>
+            <dl class="card-info second">
+              <dt>진행일수</dt>
+              <dd>
+                <strong class="num blue">315</strong>
+                명
+              </dd>
+            </dl>
+            <dl class="card-info third">
               <dt>시작일</dt>
-              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">04</strong>
+                월
+                <strong class="num blue">01</strong>
+                일
+              </dd>
+            </dl>
 
+            <dl class="card-info fourth">
               <dt>종료일</dt>
-              <dd class="pill pill-green">2025년 12월 31일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">12</strong>
+                월
+                <strong class="num blue">31</strong>
+                일
+              </dd>
             </dl>
           </article>
 
@@ -194,15 +243,45 @@
             <header class="card-head">
               <h3>2026년 교육</h3>
             </header>
-            <dl class="card-info">
-              <dt>이수자수</dt>
-              <dd class="num blue">274 명</dd>
-              <dt>결재자수</dt>
-              <dd class="num blue">315 명</dd>
+
+            <dl class="card-info first">
+              <dt>목표일수</dt>
+              <dd>
+                <strong class="num blue">274</strong>
+                명
+              </dd>
+            </dl>
+
+            <dl class="card-info second">
+              <dt>진행일수</dt>
+              <dd>
+                <strong class="num blue">315</strong>
+                명
+              </dd>
+            </dl>
+
+            <dl class="card-info third">
               <dt>시작일</dt>
-              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">04</strong>
+                월
+                <strong class="num blue">01</strong>
+                일
+              </dd>
+            </dl>
+
+            <dl class="card-info fourth">
               <dt>종료일</dt>
-              <dd class="pill pill-green">2025년 12월 31일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">12</strong>
+                월
+                <strong class="num blue">31</strong>
+                일
+              </dd>
             </dl>
           </article>
 
@@ -211,73 +290,152 @@
               <h3>무재해 현황판</h3>
             </header>
 
-            <dl class="card-info">
-              <dt>이수자수</dt>
-              <dd class="num blue">274 명</dd>
+            <dl class="card-info first">
+              <dt>목표일수</dt>
+              <dd>
+                <strong class="num blue">274</strong>
+                명
+              </dd>
+            </dl>
 
-              <dt>결재자수</dt>
-              <dd class="num blue">315 명</dd>
+            <dl class="card-info second">
+              <dt>진행일수</dt>
+              <dd>
+                <strong class="num blue">315</strong>
+                명
+              </dd>
+            </dl>
 
+            <dl class="card-info third">
               <dt>시작일</dt>
-              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">04</strong>
+                월
+                <strong class="num blue">01</strong>
+                일
+              </dd>
+            </dl>
 
+            <dl class="card-info fourth">
               <dt>종료일</dt>
-              <dd class="pill pill-green">2025년 12월 31일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">12</strong>
+                월
+                <strong class="num blue">31</strong>
+                일
+              </dd>
             </dl>
           </article>
+
           <article class="card">
             <header class="card-head">
               <h3>무재해 현황판</h3>
             </header>
 
-            <dl class="card-info">
+            <dl class="card-info first">
               <dt>이수자수</dt>
-              <dd class="num blue">274 명</dd>
+              <dd>
+                <strong class="num blue">274</strong>
+                명
+              </dd>
+            </dl>
 
+            <dl class="card-info second">
               <dt>결재자수</dt>
-              <dd class="num blue">315 명</dd>
+              <dd>
+                <strong class="num blue">315</strong>
+                명
+              </dd>
+            </dl>
 
+            <dl class="card-info third">
               <dt>시작일</dt>
-              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">04</strong>
+                월
+                <strong class="num blue">01</strong>
+                일
+              </dd>
+            </dl>
 
+            <dl class="card-info fourth">
               <dt>종료일</dt>
-              <dd class="pill pill-green">2025년 12월 31일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">12</strong>
+                월
+                <strong class="num blue">31</strong>
+                일
+              </dd>
             </dl>
           </article>
+
           <article class="card">
             <header class="card-head">
               <h3>무재해 현황판</h3>
             </header>
 
-            <dl class="card-info">
-              <dt>이수자수</dt>
-              <dd class="num blue">274 명</dd>
+            <dl class="card-info first">
+              <dt>목표일수</dt>
+              <dd>
+                <strong class="num blue">274</strong>
+                명
+              </dd>
+            </dl>
 
-              <dt>결재자수</dt>
-              <dd class="num blue">315 명</dd>
+            <dl class="card-info second">
+              <dt>진행일수</dt>
+              <dd>
+                <strong class="num blue">315</strong>
+                명
+              </dd>
+            </dl>
 
+            <dl class="card-info third">
               <dt>시작일</dt>
-              <dd class="pill pill-blue">2025년 04월 01일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">04</strong>
+                월
+                <strong class="num blue">01</strong>
+                일
+              </dd>
+            </dl>
 
+            <dl class="card-info fourth">
               <dt>종료일</dt>
-              <dd class="pill pill-green">2025년 12월 31일</dd>
+              <dd>
+                <strong class="num blue">2025</strong>
+                년
+                <strong class="num blue">12</strong>
+                월
+                <strong class="num blue">31</strong>
+                일
+              </dd>
             </dl>
           </article>
         </div>
       </section>
 
-      <!-- 하단 영역 -->
+      <!-- 캘린더 -->
       <section class="bottom">
-        <!-- 캘린더 -->
         <section class="panel calendar">
           <header class="calendar-head">
             <h3>
               안전보건 교육일정
-              <span>2025 12</span>
+              <span id="yearMonth"></span>
             </h3>
             <nav class="calendar-nav">
-              <button>&lt;</button>
-              <button>&gt;</button>
+              <button type="button"><img src="../images/icons/left-arrow.svg" alt="전달 버튼" /></button>
+              <button type="button"><img src="../images/icons/right-arrow.svg" alt="다음달 버튼" /></button>
             </nav>
           </header>
 
@@ -293,69 +451,120 @@
           </ol>
 
           <!-- 날짜 -->
-          <ol class="days">
-            <li class="day">
-              <time datetime="2025-12-01">1</time>
-            </li>
-
-            <li class="day has-event">
-              <time datetime="2025-12-02">2</time>
-              <ul class="event-list">
-                <li class="event red">PSM 준비심사</li>
-              </ul>
-            </li>
-
-            <li class="day has-event">
-              <time datetime="2025-12-03">3</time>
-              <ul class="event-list">
-                <li class="event orange">근로자 정기교육</li>
-              </ul>
-            </li>
-
-            <li class="day has-event">
-              <time datetime="2025-12-04">4</time>
-              <ul class="event-list">
-                <li class="event purple">안전 점검</li>
-              </ul>
-            </li>
-          </ol>
+          <ol class="days"></ol>
         </section>
 
         <!-- 세부일정 -->
         <aside class="panel schedule">
           <h3>세부일정</h3>
-          <ul class="schedule-list">
-            <li>
-              <time datetime="2025-12-02">2025.12.02</time>
-              <p>PSM 준비심사</p>
-            </li>
-            <li>
-              <time datetime="2025-12-06">2025.12.06</time>
-              <p>안전보건회의</p>
-            </li>
-            <li>
-              <time datetime="2025-12-10">2025.12.10</time>
-              <p>소방훈련</p>
-            </li>
-          </ul>
+          <ul class="schedule-list"></ul>
         </aside>
       </section>
     </div>
 
-    <script src="../js/menu/menu.js"></script>
+    <!-- 일정추가 모달 -->
+    <div class="modal-overlay" id="scheduleAddOverlay" aria-hidden="true">
+      <form action="post" accept-charset="UTF-8" id="addScheduleModalForm">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="scheduleAddTitle">
+          <div class="modal-head">
+            <h2 id="scheduleAddTitle">일정추가</h2>
+            <button type="button" class="modal-close" data-modal-close="scheduleAddOverlay">×</button>
+          </div>
 
-    <!-- 최신 jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <div class="modal-body">
+            <div class="form-row">
+              <label class="form-label" for="addTitle">제목</label>
+              <input type="text" id="addTitle" class="form-input" placeholder="제목을 입력하세요" />
+            </div>
 
-    <!-- IE에서 문제 생기면 1.12.4로 fallback -->
-    <script>
-      if (!window.jQuery) {
-        document.write('<script src="https://code.jquery.com/jquery-1.12.4.min.js"><\/script>');
-      }
-    </script>
+            <div class="form-row">
+              <label class="form-label">시작일</label>
+              <div class="form-date-box">
+                <input type="date" id="addStartDate" class="form-input" />
+                <input type="time" id="addStartTime" class="form-input" value="00:00" />
+              </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <div class="form-row">
+              <label class="form-label">종료일</label>
+              <div class="form-date-box">
+                <input type="date" id="addEndDate" class="form-input" />
+                <input type="time" id="addEndTime" class="form-input" value="00:00" />
+              </div>
+            </div>
 
-    <script src="../js/home/home.js"></script>
+            <div class="form-row">
+              <label class="form-label">일정색상</label>
+              <div class="color-pills" id="addColor">
+                <label class="pill purple">
+                  <input type="radio" name="eventColor" value="purple" checked />
+                  <span></span>
+                </label>
+                <label class="pill blue">
+                  <input type="radio" name="eventColor" value="blue" />
+                  <span></span>
+                </label>
+                <label class="pill orange">
+                  <input type="radio" name="eventColor" value="orange" />
+                  <span></span>
+                </label>
+                <label class="pill green">
+                  <input type="radio" name="eventColor" value="green" />
+                  <span></span>
+                </label>
+                <label class="pill red">
+                  <input type="radio" name="eventColor" value="red" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">내용</label>
+              <textarea id="addContent" class="form-textarea" placeholder="내용을 입력하세요"></textarea>
+            </div>
+          </div>
+
+          <div class="modal-foot">
+            <button type="button" class="btn btn-primary" id="addSaveBtn">저장</button>
+            <button type="button" class="btn btn-primary" id="modifyBtn">수정</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- 일정보기 모달 -->
+    <div class="modal-overlay" id="scheduleViewOverlay" aria-hidden="true">
+      <form action="post" accept-charset="UTF-8" id="viewScheduleModalForm">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="scheduleViewTitle">
+          <div class="modal-head">
+            <h2 id="scheduleViewTitle">일정 보기</h2>
+            <button type="button" class="modal-close" data-modal-close="scheduleViewOverlay">×</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="form-row">
+              <label class="form-label">제목</label>
+              <input type="text" id="viewTitle" class="form-input" readonly />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">기간</label>
+              <input type="text" id="viewDate" class="form-input" readonly />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">내용</label>
+              <textarea id="viewContent" class="form-textarea" readonly></textarea>
+            </div>
+          </div>
+
+          <div class="modal-foot">
+            <button type="button" class="btn btn-dark" id="viewDetailBtn">상세보기</button>
+            <button type="button" class="btn btn-dark" id="viewDeleteBtn">삭제</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

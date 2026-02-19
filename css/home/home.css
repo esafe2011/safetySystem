@@ -1,18 +1,20 @@
 .dash {
   margin: auto;
-  padding: 0 20px 0 280px;
+  padding: 20px 20px 0 280px;
 }
 
 /* 상단 알림 */
-
 .topbar {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.topbar .logo {
+  width: 80px;
 }
 
 .alert-list {
@@ -20,10 +22,8 @@
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  list-style: none;
   overflow: hidden;
 }
-
 .alert-list li {
   margin-right: 10px;
   white-space: nowrap;
@@ -35,20 +35,18 @@
   font-size: 12px;
   color: #fff;
 }
-
 .badge-red {
-  background: #ff5b5b;
+  background-color: #ff5b5b;
 }
-
 .badge-dark {
-  background: #555;
+  background-color: #555;
   max-width: 340px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .btn.btn-red {
-  background: #ff5b5b;
+  background-color: #ff5b5b;
   color: #fff;
   border: none;
   padding: 8px 15px;
@@ -58,11 +56,10 @@
 }
 
 /* 공통 패널 */
-
 .panel {
-  background: #fff;
+  background-color: #fff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 0;
   margin-bottom: 25px;
   box-sizing: border-box;
 }
@@ -76,7 +73,6 @@
   align-items: center;
   margin-bottom: 12px;
 }
-
 .panel-head h2 {
   font-size: 16px;
   font-weight: 700;
@@ -84,59 +80,51 @@
 
 .link-btn {
   border: none;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
   font-size: 13px;
   color: #666;
   padding: 6px 8px;
   border-radius: 8px;
 }
-
 .link-btn:hover {
-  background: #f2f4ff;
+  background-color: #f2f4ff;
 }
 
 /* 공지 테이블 */
-
 .notice-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
-
 .notice-table th,
 .notice-table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
   font-size: 13px;
 }
-
 .notice-table thead th {
-  background: #fafafa;
+  background-color: #fafafa;
   color: #666;
   font-weight: 600;
   text-align: left;
 }
-
 .notice-table tbody td:last-child,
 .notice-table thead th:last-child {
   width: 120px;
   text-align: right;
   white-space: nowrap;
 }
-
 .notice-table tbody td:first-child {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .notice-table tbody tr:hover {
-  background: #fafcff;
+  background-color: #fafcff;
 }
 
 /* 카드 영역 (4개 가로) */
-
 .cards {
   display: -ms-flexbox;
   display: flex;
@@ -148,14 +136,13 @@
   width: 23%;
   margin-right: 2%;
   margin-bottom: 20px;
-  background: #fff;
+  background-color: #fff;
   border-radius: 12px;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #eee;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
 }
-
 .card:nth-child(4n) {
   margin-right: 0;
 }
@@ -171,47 +158,46 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding: 20px 10px;
+  align-items: center;
+  border-radius: 6px;
 }
-
 .card-info dt {
   width: 50%;
   font-size: 13px;
-  color: #666;
-  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
 }
-
 .card-info dd {
   width: 50%;
   text-align: right;
   font-size: 13px;
-  margin-bottom: 8px;
+}
+
+/* card ui */
+.card-info.first {
+  background-color: #f8f1ff;
+  margin-bottom: 10px;
+}
+.card-info.second {
+  background-color: #e0edfe;
+  margin-bottom: 10px;
+}
+.card-info.third {
+  background-color: #feeee0;
+  margin-bottom: 10px;
+}
+.card-info.fourth {
+  background-color: #e6fee0;
 }
 
 .blue {
-  color: #3f7cff;
-  font-weight: bold;
-}
-
-.pill {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+  color: #4d4dff;
   font-weight: 600;
-}
-
-.pill-blue {
-  background: #e8f0ff;
-  color: #3f7cff;
-}
-
-.pill-green {
-  background: #e6f7ef;
-  color: #1fa85b;
+  font-size: 15px;
 }
 
 /* 하단 영역 */
-
 .bottom {
   display: -ms-flexbox;
   display: flex;
@@ -222,14 +208,20 @@
 .calendar {
   width: 66%;
   margin-right: 2%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .schedule {
   width: 32%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
 }
 
 /* 캘린더 */
-
 .calendar-head {
   display: -ms-flexbox;
   display: flex;
@@ -238,15 +230,20 @@
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 12px;
+  padding: 16px 20px;
 }
 
 .calendar-head h3 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.calendar-head span {
-  margin-left: 8px;
+.calendar-head #yearMonth {
+  margin-top: 8px;
   color: #666;
   font-weight: 600;
 }
@@ -255,15 +252,16 @@
 .week {
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
   margin: 15px 0;
-  padding: 0;
 }
-
 .week li {
   width: 14.285%;
   text-align: center;
   font-weight: bold;
+}
+.week li:first-child,
+.week li:nth-child(7) {
+  color: #ef4444;
 }
 
 /* 날짜 */
@@ -272,54 +270,96 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 12px;
 }
 
 .day {
-  width: 14.285%;
-  min-height: 90px;
-  border: 1px solid #eee;
-  padding: 6px;
   box-sizing: border-box;
+  width: 14.285%;
+  width: calc(14.285% - 4px);
+  -ms-flex: 0 0 calc(14.285% - 4px);
+  flex: 0 0 calc(14.285% - 4px);
+  margin: 2px;
+  min-height: 90px;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: #fafafa;
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.day:hover {
+  background-color: #eff6ff;
 }
 
 .day time {
   font-size: 12px;
   color: #333;
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.day.today time {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.days .weekend {
+  color: red;
 }
 
 .event-list {
-  list-style: none;
   margin-top: 6px;
-  padding: 0;
 }
 
+/* 이벤트 (기존 ellipsis 유지 + 최종 디자인 값 반영) */
 .event {
-  font-size: 11px;
-  padding: 3px 6px;
-  border-radius: 4px;
+  font-size: 13px;
+  padding: 3px 8px;
+  margin: 3px 0;
+  border-radius: 6px;
   color: #fff;
-  margin-bottom: 3px;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* (혹시 기존에 .red/.orange/.purple 만 붙여 쓰는 경우를 위해 유지) */
 .red {
-  background: #ff5b5b;
+  background-color: #ff5b5b;
 }
 .orange {
-  background: #ff9f43;
+  background-color: #ff9f43;
 }
 .purple {
-  background: #a66bff;
+  background-color: #a66bff;
 }
 
-/*  세부일정
-*/
+/* 최종 이벤트 컬러(더 구체적 선택자) */
+.event.red {
+  background-color: #ef4444;
+}
+.event.orange {
+  background-color: #f59e0b;
+}
+.event.purple {
+  background-color: #8b5cf6;
+}
+.event.blue {
+  background-color: #3b82f6;
+}
+.event.green {
+  background-color: #10b981;
+}
 
+/* 세부일정 */
 .schedule h3 {
   font-size: 15px;
   font-weight: 700;
@@ -327,36 +367,55 @@
 }
 
 .schedule-list {
-  list-style: none;
-  padding: 0;
+  height: 680px;
+  overflow-y: auto;
 }
 
 .schedule-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
 }
-
 .schedule-list li:last-child {
   border-bottom: none;
 }
 
 .schedule-list time {
   font-size: 12px;
-  color: #888;
+  min-width: 90px;
+  font-weight: 600;
+  color: #475569;
   display: block;
-  margin-bottom: 4px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.schedule-list time:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #94a3b8;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .schedule-list p {
-  font-size: 13px;
+  font-size: 12px;
 }
 
-.cards-slider .card {
-  margin: 0 15px;
-}
-
+/* 슬라이더 */
 .cards-slider {
   width: 100%;
+}
+.cards-slider .card {
+  margin: 0 15px;
 }
 
 /* 스와이핑 */
@@ -369,4 +428,17 @@
 }
 .slick-dots li button:before {
   font-size: 8px !important;
+}
+
+.alert-list.slick-slider {
+  width: 85%;
+}
+.live-alert-notice:hover .slick-track {
+  animation-play-state: paused !important;
+  -webkit-animation-play-state: paused !important;
+}
+
+.prev-month,
+.next-month {
+  opacity: 0.4;
 }
